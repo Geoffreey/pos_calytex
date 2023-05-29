@@ -1,0 +1,112 @@
+<section class="receipt-template">
+
+        <header class="receipt-header">
+            <div class="logo-area">
+                <img class="logo" src="{{  logo_url  }}">
+            </div>
+            <h2 class="store-name">{{ store_name }}</h2>
+            <div class="address-area">
+                <span class="info address">{{ store_address }}</span>
+                <div class="block">
+                    <span class="info phone">Mobile: {{ store_phone }}</span>, <span class="info email">Email: {{ store_email }}</span>
+                </div>
+            </div>
+        </header>
+        
+        <div class="heading">
+            <h2 class="title text-center zero-around title-lg">INVOICE</h2>
+        </div>
+        
+        <section class="info-area">
+            <table>
+                <tr>
+                    <td class="w-10"><span>Bill #:</td>
+                    <td class="w-40 text-center sinfo billno"><span>{{ invoice_id }}</span></td>
+                    <td class="w-10 text-right"><span>Date:</td>
+                    <td class="w-40 text-center sinfo date"><span>{{ date_time }}</span></td>
+                </tr>
+                <tr>
+                    <td class="w-10">M/S:</td>
+                    <td class="w-90" colspan="3"><span class="text-lg">{{ customer_name }}</span></td>
+                </tr>
+            </table>
+        </section>
+        
+        <section class="listing-area item-list">
+            <table>
+                <thead>
+                    <tr>
+                        <td class="w-40 text-center">DESC.</td>
+                        <td class="w-15 text-center">Qty</td>
+                        <td class="w-15 text-right">Price</td>
+                        <td class="w-20 text-right">AMT</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{ items }}
+                        <tr>
+                            <td>{{ item_name }}</td>
+                            <td class="text-center">{{ item_quantity }}</td>
+                            <td class="text-right">{{ item_price }}</td>
+                            <td class="text-right">{{ item_total }}</td>   
+                        </tr>
+                    {{ /items }}
+                </tbody>
+            </table>
+        </section>
+        
+        <section class="info-area calculation-area">
+            <table>
+                <tr>
+                    <td class="w-70">Subtotal:</td>
+                    <td>{{ subtotal }}</td>
+                </tr>
+                <tr>
+                    <td class="w-70">Order Tax:</td>
+                    <td>{{ order_tax }}</td>
+                </tr>
+                <tr>
+                    <td class="w-70">Discount:</td>
+                    <td>{{ discount_amount }}</td>
+                </tr>
+                <tr>
+                    <td class="w-70">Shipping Chrg:</td>
+                    <td>{{ shipping_amount }}</td>
+                </tr>
+                <tr>
+                    <td class="w-70">Others Chrg:</td>
+                    <td>{{ others_charge }}</td>
+                </tr>
+                <tr>
+                    <td class="w-70">Previous Due:</td>
+                    <td>{{ previous_due }}</td>
+                </tr>
+                <tr>
+                    <td class="w-70">Amount Total:</td>
+                    <td>{{ payable_amount }}</td>
+                </tr>
+                <tr>
+                    <td class="w-70">Amount Paid:</td>
+                    <td>{{ paid_amount }}</td>
+                </tr>
+                <tr>
+                    <td class="w-70">Due:</td>
+                    <td>{{ due }}</td>
+                </tr>
+                <tr>
+                    <td class="w-70">Change:</td>
+                    <td>{{ change }}</td>
+                </tr>
+            </table>
+        </section>
+        
+        <section class="stylish-footer text-center">
+            <span>Printed On: {{ printed_on }}</span>
+        </section>
+        
+        <section class="info-area align-center footer-area">
+            <span class="block">Sold product No Claim. No Change, New product One Month Warranty.</span>
+            <span class="block bold">Thank You for Choosing Us.</span>
+        </section>
+        
+ </section>
